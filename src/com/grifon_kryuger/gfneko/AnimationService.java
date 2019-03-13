@@ -22,6 +22,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -169,7 +171,7 @@ public class AnimationService extends Service {
     touch_params = new WindowManager.LayoutParams(
         0, 0,
         (ICS_OR_LATER ?
-            WindowManager.LayoutParams.TYPE_SYSTEM_ERROR :
+            WindowManager.LayoutParams.TYPE_PHONE :
             WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY),
         WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE |
@@ -233,30 +235,20 @@ public class AnimationService extends Service {
         new Intent(this, AnimationService.class).setAction(ACTION_TOGGLE),
         0);
 
-//    NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
     Notification.Builder builder = new Notification.Builder(this);
 
     builder
         .setContentIntent(intent)
-        .setSmallIcon(start ? R.drawable.mati1 : R.drawable.sleep1)
+//        .setSmallIcon(start ? R.drawable.mati1 : R.drawable.sleep1)
+        .setSmallIcon(R.drawable.icon)
         .setContentTitle(getString(R.string.app_name))
         .setContentText(getString(start? R.string.notification_enable : R.string.notification_disable))
         ;
 
-//    Notification notif = new Notification(
-//        (start ? R.drawable.mati1 : R.drawable.sleep1), null, 0);
-//    notif.setLatestEventInfo(
-//        this,
-//        getString(R.string.app_name),
-//        getString(start ?
-//            R.string.notification_enable :
-//            R.string.notification_disable),
-//        intent);
-
     Notification notif = builder.build();
 
     notif.flags = Notification.FLAG_ONGOING_EVENT;
+
 
     if (start) {
       startForeground(NOTIF_ID, notif);
@@ -310,8 +302,9 @@ public class AnimationService extends Service {
     }
 
     WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
-    int dw = wm.getDefaultDisplay().getWidth();
-    int dh = wm.getDefaultDisplay().getHeight();
+    Display d = wm.getDefaultDisplay();
+    int dw = d.getWidth();
+    int dh = d.getHeight();
     int cx, cy;
     {
       int pos = random.nextInt(400);
@@ -477,7 +470,15 @@ public class AnimationService extends Service {
       }
 
       if (ev.getAction() == MotionEvent.ACTION_OUTSIDE) {
-        motion_state.setTargetPosition(ev.getX(), ev.getY());
+
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+        int dw = wm.getDefaultDisplay().getWidth();
+        int dh = wm.getDefaultDisplay().getHeight();
+
+        float x = random.nextInt(dw);
+        float y = random.nextInt(dh);
+        motion_state.setTargetPosition(x, y);
+//        motion_state.setTargetPosition(ev.getX(), ev.getY());
         requestAnimate();
       } else if (ev.getAction() == MotionEvent.ACTION_CANCEL) {
         motion_state.forceStop();
@@ -502,7 +503,8 @@ public class AnimationService extends Service {
     private MotionParams params;
     private int alpha = 0xff;
 
-    private Behaviour behaviour = Behaviour.closer;
+//    private Behaviour behaviour = Behaviour.closer;
+    private Behaviour behaviour = Behaviour.whimsical;
     private int cur_behaviour_idx = 0;
     private long last_behaviour_changed = 0;
 
@@ -654,19 +656,24 @@ public class AnimationService extends Service {
     }
 
     private void changeToMovingState() {
-      int dir = (int) (Math.atan2(vy, vx) * 4 / Math.PI + 8.5) % 8;
-      MotionParams.MoveDirection dirs[] = {
-          MotionParams.MoveDirection.RIGHT,
-          MotionParams.MoveDirection.DOWN_RIGHT,
-          MotionParams.MoveDirection.DOWN,
-          MotionParams.MoveDirection.DOWN_LEFT,
-          MotionParams.MoveDirection.LEFT,
-          MotionParams.MoveDirection.UP_LEFT,
-          MotionParams.MoveDirection.UP,
-          MotionParams.MoveDirection.UP_RIGHT
-      };
+//      int dir = (int) (Math.atan2(vy, vx) * 4 / Math.PI + 8.5) % 8;
+//      MotionParams.MoveDirection dirs[] = {
+//          MotionParams.MoveDirection.RIGHT,
+//          MotionParams.MoveDirection.DOWN_RIGHT,
+//          MotionParams.MoveDirection.DOWN,
+//          MotionParams.MoveDirection.DOWN_LEFT,
+//          MotionParams.MoveDirection.LEFT,
+//          MotionParams.MoveDirection.UP_LEFT,
+//          MotionParams.MoveDirection.UP,
+//          MotionParams.MoveDirection.UP_RIGHT
+//      };
+//      String nstate = params.getMoveState(dirs[dir]);
 
-      String nstate = params.getMoveState(dirs[dir]);
+      MotionParams.MoveDirection d = vx >= 0
+          ? MotionParams.MoveDirection.RIGHT
+          : MotionParams.MoveDirection.LEFT;
+
+      String nstate = params.getMoveState(d);
       if (!params.hasState(nstate)) {
         return;
       }
@@ -698,6 +705,9 @@ public class AnimationService extends Service {
     }
 
     private void setTargetPosition(float x, float y) {
+
+      Log.d("AAAA", "x=" + x + " y=" + y);
+
       if (!ICS_OR_LATER) {
         long cur_time = System.currentTimeMillis();
         double r = (double) (cur_time - last_behaviour_changed) /

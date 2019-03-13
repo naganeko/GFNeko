@@ -8,96 +8,298 @@
                moveStatePrefix="move"
                wallStatePrefix="wall"
                >
-  <motion state="stop" nextState="wait" checkWall="true">
-    <item drawable="@drawable/mati1" duration="5000" />
-    <repeat-item repeatCount="4">
-      <item drawable="@drawable/kaki1" duration="250" />
-      <item drawable="@drawable/kaki2" duration="250" />
+  <!--<motion state="stop" nextState="wait" checkWall="true">-->
+  <motion state="stop" nextState="wait" >
+
+    <repeat-item repeatCount="10">
+    <item drawable="@drawable/idwmod_wait_000" duration="50" />
+    <item drawable="@drawable/idwmod_wait_001" duration="50" />
+    <item drawable="@drawable/idwmod_wait_002" duration="50" />
+    <item drawable="@drawable/idwmod_wait_003" duration="50" />
+    <item drawable="@drawable/idwmod_wait_004" duration="50" />
+    <item drawable="@drawable/idwmod_wait_005" duration="50" />
+    <item drawable="@drawable/idwmod_wait_006" duration="50" />
+    <item drawable="@drawable/idwmod_wait_007" duration="50" />
+    <item drawable="@drawable/idwmod_wait_008" duration="50" />
+    <item drawable="@drawable/idwmod_wait_009" duration="50" />
+    <item drawable="@drawable/idwmod_wait_010" duration="50" />
+    <item drawable="@drawable/idwmod_wait_011" duration="50" />
+    <item drawable="@drawable/idwmod_wait_012" duration="50" />
+    <item drawable="@drawable/idwmod_wait_013" duration="50" />
+    <item drawable="@drawable/idwmod_wait_014" duration="50" />
+    <item drawable="@drawable/idwmod_wait_015" duration="50" />
+    <item drawable="@drawable/idwmod_wait_016" duration="50" />
+    <item drawable="@drawable/idwmod_wait_017" duration="50" />
+    <item drawable="@drawable/idwmod_wait_018" duration="50" />
+    <item drawable="@drawable/idwmod_wait_019" duration="50" />
+    <item drawable="@drawable/idwmod_wait_020" duration="50" />
+    <item drawable="@drawable/idwmod_wait_021" duration="50" />
+    <item drawable="@drawable/idwmod_wait_022" duration="50" />
+    <item drawable="@drawable/idwmod_wait_023" duration="50" />
+    <item drawable="@drawable/idwmod_wait_024" duration="50" />
+    <item drawable="@drawable/idwmod_wait_025" duration="50" />
+    <item drawable="@drawable/idwmod_wait_026" duration="50" />
     </repeat-item>
-    <item drawable="@drawable/mati1" duration="1000" />
+
+    <repeat-item >
+    <item drawable="@drawable/ridwmod_lying_000" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_001" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_002" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_003" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_004" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_005" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_006" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_007" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_008" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_009" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_010" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_011" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_012" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_013" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_014" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_015" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_016" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_017" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_018" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_019" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_020" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_021" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_022" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_023" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_024" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_025" duration="100" />
+    <item drawable="@drawable/ridwmod_lying_026" duration="100" />
+
+    </repeat-item>
+    <!--<item drawable="@drawable/mati1" duration="5000" />-->
+    <!--<repeat-item repeatCount="4">-->
+      <!--<item drawable="@drawable/kaki1" duration="250" />-->
+      <!--<item drawable="@drawable/kaki2" duration="250" />-->
+    <!--</repeat-item>-->
+    <!--<item drawable="@drawable/mati1" duration="1000" />-->
+
   </motion>
 
   <motion state="wait">
-    <item drawable="@drawable/mati1" duration="4000" />
-    <repeat-item repeatCount="4">
-      <item drawable="@drawable/kaki1" duration="250" />
-      <item drawable="@drawable/kaki2" duration="250" />
-    </repeat-item>
-    <item drawable="@drawable/mati1" duration="5000" />
-
-    <item drawable="@drawable/mati2" duration="1500" />
     <repeat-item>
-      <repeat-item repeatCount="50">
-        <item drawable="@drawable/sleep1" duration="1000" />
-        <item drawable="@drawable/sleep2" duration="1000" />
-      </repeat-item>
-
-      <item drawable="@drawable/akubi1" duration="500" />
-      <item drawable="@drawable/akubi_l" duration="500" />
-      <item drawable="@drawable/akubi_r" duration="500" />
-      <item drawable="@drawable/akubi1" duration="500" />
-      <item drawable="@drawable/akubi2" duration="1000" />
-      <item drawable="@drawable/akubi1" duration="500" />
+    <item drawable="@drawable/idwmod_wait_000" duration="50" />
+    <item drawable="@drawable/idwmod_wait_001" duration="50" />
+    <item drawable="@drawable/idwmod_wait_002" duration="50" />
+    <item drawable="@drawable/idwmod_wait_003" duration="50" />
+    <item drawable="@drawable/idwmod_wait_004" duration="50" />
+    <item drawable="@drawable/idwmod_wait_005" duration="50" />
+    <item drawable="@drawable/idwmod_wait_006" duration="50" />
+    <item drawable="@drawable/idwmod_wait_007" duration="50" />
+    <item drawable="@drawable/idwmod_wait_008" duration="50" />
+    <item drawable="@drawable/idwmod_wait_009" duration="50" />
+    <item drawable="@drawable/idwmod_wait_010" duration="50" />
+    <item drawable="@drawable/idwmod_wait_011" duration="50" />
+    <item drawable="@drawable/idwmod_wait_012" duration="50" />
+    <item drawable="@drawable/idwmod_wait_013" duration="50" />
+    <item drawable="@drawable/idwmod_wait_014" duration="50" />
+    <item drawable="@drawable/idwmod_wait_015" duration="50" />
+    <item drawable="@drawable/idwmod_wait_016" duration="50" />
+    <item drawable="@drawable/idwmod_wait_017" duration="50" />
+    <item drawable="@drawable/idwmod_wait_018" duration="50" />
+    <item drawable="@drawable/idwmod_wait_019" duration="50" />
+    <item drawable="@drawable/idwmod_wait_020" duration="50" />
+    <item drawable="@drawable/idwmod_wait_021" duration="50" />
+    <item drawable="@drawable/idwmod_wait_022" duration="50" />
+    <item drawable="@drawable/idwmod_wait_023" duration="50" />
+    <item drawable="@drawable/idwmod_wait_024" duration="50" />
+    <item drawable="@drawable/idwmod_wait_025" duration="50" />
+    <item drawable="@drawable/idwmod_wait_026" duration="50" />
     </repeat-item>
+
+
+
+
+
+    <!--<item drawable="@drawable/mati1" duration="4000" />-->
+    <!--<repeat-item repeatCount="4">-->
+      <!--<item drawable="@drawable/kaki1" duration="250" />-->
+      <!--<item drawable="@drawable/kaki2" duration="250" />-->
+    <!--</repeat-item>-->
+    <!--<item drawable="@drawable/mati1" duration="5000" />-->
+
+    <!--<item drawable="@drawable/mati2" duration="1500" />-->
+    <!--<repeat-item>-->
+      <!--<repeat-item repeatCount="50">-->
+        <!--<item drawable="@drawable/sleep1" duration="1000" />-->
+        <!--<item drawable="@drawable/sleep2" duration="1000" />-->
+      <!--</repeat-item>-->
+
+      <!--<item drawable="@drawable/akubi1" duration="500" />-->
+      <!--<item drawable="@drawable/akubi_l" duration="500" />-->
+      <!--<item drawable="@drawable/akubi_r" duration="500" />-->
+      <!--<item drawable="@drawable/akubi1" duration="500" />-->
+      <!--<item drawable="@drawable/akubi2" duration="1000" />-->
+      <!--<item drawable="@drawable/akubi1" duration="500" />-->
+    <!--</repeat-item>-->
   </motion>
 
   <motion state="awake" nextState="stop" checkMove="true">
-    <item drawable="@drawable/awake" duration="750" />
+    <!--<item drawable="@drawable/awake" duration="750" />-->
+    <item drawable="@drawable/idwmod_wait_000" duration="500" />
   </motion>
 
   <motion state="moveUp">
     <repeat-item>
-      <item drawable="@drawable/up1" duration="250" />
-      <item drawable="@drawable/up2" duration="250" />
+      <item drawable="@drawable/idwmod_move_w_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_011" duration="50" />
+
+      <!--<item drawable="@drawable/up1" duration="250" />-->
+      <!--<item drawable="@drawable/up2" duration="250" />-->
     </repeat-item>
   </motion>
 
   <motion state="moveDown">
     <repeat-item>
-      <item drawable="@drawable/down1" duration="250" />
-      <item drawable="@drawable/down2" duration="250" />
+      <item drawable="@drawable/idwmod_move_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_011" duration="50" />
+
+      <!--<item drawable="@drawable/down1" duration="250" />-->
+      <!--<item drawable="@drawable/down2" duration="250" />-->
     </repeat-item>
   </motion>
 
   <motion state="moveLeft">
     <repeat-item>
-      <item drawable="@drawable/left1" duration="250" />
-      <item drawable="@drawable/left2" duration="250" />
+      <item drawable="@drawable/idwmod_move_w_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_011" duration="50" />
+
+      <!--<item drawable="@drawable/left1" duration="250" />-->
+      <!--<item drawable="@drawable/left2" duration="250" />-->
     </repeat-item>
   </motion>
 
   <motion state="moveRight">
     <repeat-item>
-      <item drawable="@drawable/right1" duration="250" />
-      <item drawable="@drawable/right2" duration="250" />
+      <item drawable="@drawable/idwmod_move_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_011" duration="50" />
+
+      <!--<item drawable="@drawable/right1" duration="250" />-->
+      <!--<item drawable="@drawable/right2" duration="250" />-->
     </repeat-item>
   </motion>
 
   <motion state="moveUpLeft">
     <repeat-item>
-      <item drawable="@drawable/upleft1" duration="250" />
-      <item drawable="@drawable/upleft2" duration="250" />
+      <item drawable="@drawable/idwmod_move_w_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_011" duration="50" />
+
+      <!--<item drawable="@drawable/upleft1" duration="250" />-->
+      <!--<item drawable="@drawable/upleft2" duration="250" />-->
     </repeat-item>
   </motion>
 
   <motion state="moveUpRight">
     <repeat-item>
-      <item drawable="@drawable/upright1" duration="250" />
-      <item drawable="@drawable/upright2" duration="250" />
+      <item drawable="@drawable/idwmod_move_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_011" duration="50" />
+
+      <!--<item drawable="@drawable/upright1" duration="250" />-->
+      <!--<item drawable="@drawable/upright2" duration="250" />-->
     </repeat-item>
   </motion>
 
   <motion state="moveDownRight">
     <repeat-item>
-      <item drawable="@drawable/dwright1" duration="250" />
-      <item drawable="@drawable/dwright2" duration="250" />
+      <item drawable="@drawable/idwmod_move_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_011" duration="50" />
+
+      <!--<item drawable="@drawable/dwright1" duration="250" />-->
+      <!--<item drawable="@drawable/dwright2" duration="250" />-->
     </repeat-item>
   </motion>
 
   <motion state="moveDownLeft">
     <repeat-item>
-      <item drawable="@drawable/dwleft1" duration="250" />
-      <item drawable="@drawable/dwleft2" duration="250" />
+
+      <item drawable="@drawable/idwmod_move_w_000" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_001" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_002" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_003" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_004" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_005" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_006" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_007" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_008" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_009" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_010" duration="50" />
+      <item drawable="@drawable/idwmod_move_w_011" duration="50" />
+      <!--<item drawable="@drawable/dwleft1" duration="250" />-->
+      <!--<item drawable="@drawable/dwleft2" duration="250" />-->
     </repeat-item>
   </motion>
 
