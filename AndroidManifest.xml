@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.grifon_kryuger.gfneko"
+          android:versionCode="6"
+          android:versionName="0.1.2">
+
+  <uses-sdk android:minSdkVersion="19"
+            android:targetSdkVersion="19" />
+
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+  <application android:icon="@drawable/icon" android:label="@string/app_name"
+    tools:ignore="GoogleAppIndexingWarning">
+
+    <activity android:name=".GFNekoActivity"
+              android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <receiver android:name=".GFNekoReceiver">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.PACKAGE_REPLACED" />
+        <data android:scheme="package" />
+      </intent-filter>
+    </receiver>
+
+    <service android:name=".AnimationService" />
+
+    <activity android:name=".NekoSkin"
+              android:label="@string/skin_name_neko">
+      <intent-filter>
+        <action android:name="com.grifon_kryuger.gfneko.action.GET_SKIN" />
+      </intent-filter>
+      <meta-data android:name="com.grifon_kryuger.gfneko.skin"
+                 android:resource="@xml/neko" />
+    </activity>
+
+  </application>
+</manifest>
