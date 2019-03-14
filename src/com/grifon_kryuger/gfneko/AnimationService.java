@@ -200,7 +200,7 @@ public class AnimationService extends Service {
 //    image_view.setBackgroundColor(Color.GREEN);
     
     image_params = new LayoutParams(
-        160,160,
+        200, 200,
 //        LayoutParams.WRAP_CONTENT,
 //        LayoutParams.WRAP_CONTENT,
         LayoutParams.TYPE_SYSTEM_OVERLAY,

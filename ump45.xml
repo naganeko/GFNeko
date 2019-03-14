@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<motion-params acceleration="160"
+               maxVelocity="100"
+               deaccelerationDistance="60"
+               proximityDistance="10"
+               initialState="stop"
+               awakeState="awake"
+               moveStatePrefix="move"
+               wallStatePrefix="wall"
+               >
+  <motion state="stop" nextState="wait" >
+    <repeat-item repeatCount="10">
+    <item drawable="ump45_wait_000" duration="80" />
+    <item drawable="ump45_wait_001" duration="80" />
+    <item drawable="ump45_wait_002" duration="80" />
+    <item drawable="ump45_wait_003" duration="80" />
+    <item drawable="ump45_wait_004" duration="80" />
+    <item drawable="ump45_wait_005" duration="80" />
+    <item drawable="ump45_wait_006" duration="80" />
+    <item drawable="ump45_wait_007" duration="80" />
+    <item drawable="ump45_wait_008" duration="80" />
+    <item drawable="ump45_wait_009" duration="80" />
+    <item drawable="ump45_wait_010" duration="80" />
+    <item drawable="ump45_wait_011" duration="80" />
+    <item drawable="ump45_wait_012" duration="80" />
+    </repeat-item>
+
+    <repeat-item >
+    <item drawable="rump45_lying_000" duration="100" />
+    <item drawable="rump45_lying_001" duration="100" />
+    <item drawable="rump45_lying_002" duration="100" />
+    <item drawable="rump45_lying_003" duration="100" />
+    <item drawable="rump45_lying_004" duration="100" />
+    <item drawable="rump45_lying_005" duration="100" />
+    <item drawable="rump45_lying_006" duration="100" />
+    <item drawable="rump45_lying_007" duration="100" />
+    <item drawable="rump45_lying_008" duration="100" />
+    <item drawable="rump45_lying_009" duration="100" />
+    <item drawable="rump45_lying_010" duration="100" />
+    <item drawable="rump45_lying_011" duration="100" />
+    <item drawable="rump45_lying_012" duration="100" />
+    <item drawable="rump45_lying_013" duration="100" />
+    <item drawable="rump45_lying_014" duration="100" />
+    <item drawable="rump45_lying_015" duration="100" />
+    <item drawable="rump45_lying_016" duration="100" />
+    <item drawable="rump45_lying_017" duration="100" />
+    <item drawable="rump45_lying_018" duration="100" />
+    </repeat-item>
+  </motion>
+
+  <motion state="wait">
+    <repeat-item>
+    <item drawable="ump45_wait_000" duration="80" />
+    <item drawable="ump45_wait_001" duration="80" />
+    <item drawable="ump45_wait_002" duration="80" />
+    <item drawable="ump45_wait_003" duration="80" />
+    <item drawable="ump45_wait_004" duration="80" />
+    <item drawable="ump45_wait_005" duration="80" />
+    <item drawable="ump45_wait_006" duration="80" />
+    <item drawable="ump45_wait_007" duration="80" />
+    <item drawable="ump45_wait_008" duration="80" />
+    <item drawable="ump45_wait_009" duration="80" />
+    <item drawable="ump45_wait_010" duration="80" />
+    <item drawable="ump45_wait_011" duration="80" />
+    <item drawable="ump45_wait_012" duration="80" />
+    </repeat-item>
+  </motion>
+
+  <motion state="awake" nextState="stop" checkMove="true">
+    <item drawable="ump45_wait_000" duration="300" />
+  </motion>
+
+  <motion state="moveLeft">
+    <repeat-item>
+      <item drawable="ump45_move_w_000" duration="50" />
+      <item drawable="ump45_move_w_001" duration="50" />
+      <item drawable="ump45_move_w_002" duration="50" />
+      <item drawable="ump45_move_w_003" duration="50" />
+      <item drawable="ump45_move_w_004" duration="50" />
+      <item drawable="ump45_move_w_005" duration="50" />
+      <item drawable="ump45_move_w_006" duration="50" />
+      <item drawable="ump45_move_w_007" duration="50" />
+      <item drawable="ump45_move_w_008" duration="50" />
+      <item drawable="ump45_move_w_009" duration="50" />
+      <item drawable="ump45_move_w_010" duration="50" />
+      <item drawable="ump45_move_w_011" duration="50" />
+    </repeat-item>
+  </motion>
+
+  <motion state="moveRight">
+    <repeat-item>
+      <item drawable="ump45_move_000" duration="50" />
+      <item drawable="ump45_move_001" duration="50" />
+      <item drawable="ump45_move_002" duration="50" />
+      <item drawable="ump45_move_003" duration="50" />
+      <item drawable="ump45_move_004" duration="50" />
+      <item drawable="ump45_move_005" duration="50" />
+      <item drawable="ump45_move_006" duration="50" />
+      <item drawable="ump45_move_007" duration="50" />
+      <item drawable="ump45_move_008" duration="50" />
+      <item drawable="ump45_move_009" duration="50" />
+      <item drawable="ump45_move_010" duration="50" />
+      <item drawable="ump45_move_011" duration="50" />
+    </repeat-item>
+  </motion>
+  
+</motion-params>
