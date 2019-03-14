@@ -24,13 +24,13 @@
        android:entryValues="@array/pref_motion_transparency_entryvalues"
        android:defaultValue="0.0"
        />
-    <!--<com.grifon_kryuger.gfneko.SkinPreference-->
-       <!--android:key="motion.skin"-->
-       <!--android:title="@string/pref_motion_skin_title"-->
-       <!--android:summary="@string/pref_motion_skin_summary"-->
-       <!--android:dialogTitle="@string/pref_skin_dialog_title"-->
-       <!--android:defaultValue="com.grifon_kryuger.gfneko/com.grifon_kryuger.gfneko.NekoSkin"-->
-       <!--/>-->
+    <com.grifon_kryuger.gfneko.SkinPreference
+       android:key="motion.skin"
+       android:title="@string/pref_motion_skin_title"
+       android:summary="@string/pref_motion_skin_summary"
+       android:dialogTitle="@string/pref_skin_dialog_title"
+       android:defaultValue="com.grifon_kryuger.gfneko/com.grifon_kryuger.gfneko.NekoSkin"
+       />
   </PreferenceCategory>
 
 </PreferenceScreen>

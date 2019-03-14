@@ -14,6 +14,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.PointF;
@@ -181,6 +182,7 @@ public class AnimationService extends Service {
     wm.addView(touch_view, touch_params);
 
     image_view = new ImageView(this);
+//    image_view.setBackgroundColor(Color.GREEN);
     image_params = new WindowManager.LayoutParams(
         WindowManager.LayoutParams.WRAP_CONTENT,
         WindowManager.LayoutParams.WRAP_CONTENT,
