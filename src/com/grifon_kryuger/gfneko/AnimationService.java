@@ -19,6 +19,7 @@ import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -29,9 +30,15 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.WindowManager.LayoutParams;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Properties;
 import java.util.Random;
 
 public class AnimationService extends Service {
@@ -80,8 +87,8 @@ public class AnimationService extends Service {
   private Random random;
   private View touch_view = null;
   private ImageView image_view = null;
-  private WindowManager.LayoutParams touch_params = null;
-  private WindowManager.LayoutParams image_params = null;
+  private LayoutParams touch_params = null;
+  private LayoutParams image_params = null;
   private BroadcastReceiver receiver = null;
 
   @Override
@@ -169,30 +176,45 @@ public class AnimationService extends Service {
 
     touch_view = new View(this);
     touch_view.setOnTouchListener(new TouchListener());
-    touch_params = new WindowManager.LayoutParams(
-        0, 0,
+    touch_params = new LayoutParams(
+        LayoutParams.WRAP_CONTENT,
+        LayoutParams.WRAP_CONTENT,
+//        0, 0,
         (ICS_OR_LATER ?
-            WindowManager.LayoutParams.TYPE_PHONE :
-            WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY),
-        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
-            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE |
-            WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
+            LayoutParams.TYPE_PHONE :
+//            LayoutParams.TYPE_SYSTEM_ALERT :
+            LayoutParams.TYPE_SYSTEM_OVERLAY),
+        LayoutParams.FLAG_NOT_FOCUSABLE
+      |      LayoutParams.FLAG_NOT_TOUCHABLE
+      |    LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
+        ,
         PixelFormat.TRANSLUCENT);
+    
+//    touch_view.setBackgroundColor(0x8000FF00);
+    
     touch_params.gravity = Gravity.LEFT | Gravity.TOP;
     wm.addView(touch_view, touch_params);
 
     image_view = new ImageView(this);
+    
 //    image_view.setBackgroundColor(Color.GREEN);
-    image_params = new WindowManager.LayoutParams(
-        WindowManager.LayoutParams.WRAP_CONTENT,
-        WindowManager.LayoutParams.WRAP_CONTENT,
-        WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
-        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
-            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE |
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+    
+    image_params = new LayoutParams(
+        160,160,
+//        LayoutParams.WRAP_CONTENT,
+//        LayoutParams.WRAP_CONTENT,
+        LayoutParams.TYPE_SYSTEM_OVERLAY,
+        LayoutParams.FLAG_NOT_FOCUSABLE |
+            LayoutParams.FLAG_NOT_TOUCHABLE |
+            LayoutParams.FLAG_LAYOUT_NO_LIMITS,
         PixelFormat.TRANSLUCENT);
     image_params.gravity = Gravity.LEFT | Gravity.TOP;
     wm.addView(image_view, image_params);
+    
+    
+    
+    Log.d("AAAA", " image_params.width = " +     image_params.width
+    + "  image_params.height= " +     image_params.height) ;
 
     requestAnimate();
   }
@@ -267,6 +289,42 @@ public class AnimationService extends Service {
   }
 
   private boolean loadMotionState() {
+  
+  
+  //*
+    File externalStorageDirectory = Environment.getExternalStorageDirectory();
+    String path = externalStorageDirectory.getAbsolutePath();
+    Log.d("AAAA", "" + path);
+    Properties p = new Properties();
+    File pfile = new File(externalStorageDirectory, "/GFNeko/gfneko.properties");
+    boolean loaded = false;
+    try {
+      p.load(new FileInputStream(pfile));
+      Log.d("AAAA", "" + p);
+      String folder = p.getProperty("folder");
+      File dir = new File(externalStorageDirectory, "/GFNeko/skins/" + folder);
+      Log.d("AAAA", "dir=" + dir.exists());
+      Log.d("AAAA", "files=" + Arrays.toString(dir.listFiles()));
+      PackageManager pm = getPackageManager();
+      ComponentName skin_comp = new ComponentName(this, NekoSkin.class);
+      Resources res = pm.getResourcesForActivity(skin_comp);
+  
+      MotionParams params2 = new MotionParams2(this, res, dir, null);
+      motion_state = new MotionState();
+      motion_state.setParams(params2);
+  
+      loaded = true;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    if (loaded) {
+  
+      afterMotionLoaded();
+  
+      return true;
+    }
+    //*/
+  
     String skin_pkg = prefs.getString(PREF_KEY_SKIN_COMPONENT, null);
     ComponentName skin_comp =
         (skin_pkg == null ? null :
@@ -281,6 +339,9 @@ public class AnimationService extends Service {
 
   private boolean loadMotionState(ComponentName skin_comp) {
     motion_state = new MotionState();
+  
+  
+    
 
     try {
       PackageManager pm = getPackageManager();
@@ -302,7 +363,13 @@ public class AnimationService extends Service {
           .setAction(ACTION_TOGGLE));
       return false;
     }
+  
+    afterMotionLoaded();
 
+    return true;
+  }
+  
+  private void afterMotionLoaded() {
     WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
     Display d = wm.getDefaultDisplay();
     int dw = d.getWidth();
@@ -319,22 +386,20 @@ public class AnimationService extends Service {
         cy = (dh + 200) * ratio / 100 - 100;
       }
     }
-
+    
     String alpha_str = prefs.getString(PREF_KEY_TRANSPARENCY, "0.0");
     motion_state.alpha = (int) ((1 - Float.valueOf(alpha_str)) * 0xff);
-
+    
     motion_state.setBehaviour(
         Behaviour.valueOf(
             prefs.getString(PREF_KEY_BEHAVIOUR,
                 motion_state.behaviour.toString())));
-
+    
     motion_state.setDisplaySize(dw, dh);
     motion_state.setCurrentPosition(cx, cy);
     motion_state.setTargetPositionDirect(dw / 2, dh / 2);
-
-    return true;
   }
-
+  
   private void requestAnimate() {
     if (!handler.hasMessages(MSG_ANIMATE)) {
       handler.sendEmptyMessage(MSG_ANIMATE);
@@ -350,6 +415,8 @@ public class AnimationService extends Service {
     if (drawable == null) {
       return;
     }
+  
+
 
     drawable.setAlpha(motion_state.alpha);
     image_view.setImageDrawable(drawable);
@@ -361,7 +428,7 @@ public class AnimationService extends Service {
     Point pt = motion_state.getPosition();
     image_params.x = pt.x;
     image_params.y = pt.y;
-
+    
     WindowManager wm =
         (WindowManager) getSystemService(WINDOW_SERVICE);
     wm.updateViewLayout(image_view, image_params);
@@ -467,6 +534,14 @@ public class AnimationService extends Service {
 
   private class TouchListener implements View.OnTouchListener {
     public boolean onTouch(View v, MotionEvent ev) {
+      
+      
+      Log.d("AAAA", ev.getX() + " , " + ev.getY() + " , act=" + ev.getAction());
+  
+  
+      Log.d("AAAA", "image: " + image_view.getWidth() + " , " + image_view.getHeight());
+      
+  
       if (motion_state == null) {
         return false;
       }
