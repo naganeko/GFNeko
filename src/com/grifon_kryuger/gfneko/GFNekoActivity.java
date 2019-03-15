@@ -11,25 +11,25 @@ public class GFNekoActivity extends PreferenceActivity {
   public void onCreate(Bundle savedState) {
     super.onCreate(savedState);
     addPreferencesFromResource(R.xml.pref);
-    
-    getPreferenceManager().findPreference(AnimationService.PREF_KEY_ENABLE)
+
+    getPreferenceManager()
+        .findPreference(AnimationService.PREF_KEY_ENABLE)
         .setOnPreferenceClickListener(new OnEnableClickListener());
-    
+
     startAnimationService();
   }
-  
+
   private void startAnimationService() {
     SharedPreferences.Editor edit =
         getPreferenceManager().getSharedPreferences().edit();
     edit.putBoolean(AnimationService.PREF_KEY_VISIBLE, true);
     edit.commit();
-    
+
     startService(new Intent(this, AnimationService.class)
         .setAction(AnimationService.ACTION_START));
   }
-  
-  private class OnEnableClickListener
-      implements Preference.OnPreferenceClickListener {
+
+  private class OnEnableClickListener implements Preference.OnPreferenceClickListener {
     @Override
     public boolean onPreferenceClick(Preference pref) {
       startAnimationService();

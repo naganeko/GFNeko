@@ -9,33 +9,36 @@
                wallStatePrefix="wall">
   <motion state="stop" nextState="wait">
     <repeat-item repeatCount="10">
-      <item drawable="ump45_wait_000" duration="80" start="0" end="12" />
+      <item drawable="Rodoggie_R_wait_000" duration="80" start="0" end="8" />
     </repeat-item>
 
+    <repeat-item repeatCount="10">
+      <item drawable="Rodoggie_R_sit_000" duration="80" start="0" end="16"/>
+    </repeat-item>
     <repeat-item>
-      <item drawable="rump45_sit_000" duration="80" start="0" end="16"/>
+      <item drawable="Rodoggie_R_lying_000" duration="80" start="0" end="20"/>
     </repeat-item>
   </motion>
 
   <motion state="wait">
     <repeat-item>
-      <item drawable="ump45_wait_000" duration="80" start="0" end="12" />
+      <item drawable="Rodoggie_R_wait_000" duration="80" start="0" end="8" />
     </repeat-item>
   </motion>
 
   <motion checkMove="true" nextState="stop" state="awake">
-    <item drawable="ump45_wait_000" duration="300"/>
+    <item drawable="Rodoggie_R_wait_000" duration="300"/>
   </motion>
 
   <motion state="moveLeft">
     <repeat-item>
-      <item drawable="ump45_move_w_000" duration="50" start="0" end="11" />
+      <item drawable="Rodoggie_R_move_w_000" duration="80" start="0" end="7" />
     </repeat-item>
   </motion>
 
   <motion state="moveRight">
     <repeat-item>
-      <item drawable="ump45_move_000" duration="50" start="0" end="11" />
+      <item drawable="Rodoggie_R_move_000" duration="80" start="0" end="7" />
     </repeat-item>
   </motion>
 

@@ -53,13 +53,13 @@ public class MotionParams2 extends MotionParams {
 //  }
 
 //  public MotionParams2(Context context, Resources res, int resid) {
-  public MotionParams2(Context context, Resources res, File baseDir, Properties p) {
+  public MotionParams2(Context context, Resources res, File baseDir, String xmlFile) {
   
     this.resourceBaseDir = baseDir.getAbsolutePath();
   
     try {
       XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
-      File file = new File(baseDir, "ump45.xml");
+      File file = new File(baseDir, xmlFile);
       parser.setInput(new BufferedInputStream(new FileInputStream(file)), "utf8");
       AttributeSet attrs = Xml.asAttributeSet(parser);
       parseXml(res, parser, attrs);
@@ -288,14 +288,23 @@ public class MotionParams2 extends MotionParams {
     int duration = attrs.getAttributeIntValue(
         null, ATTR_ITEM_DURATION, -1);
     String filename = attrs.getAttributeValue(null, ATTR_ITEM_DRAWABLE);
-    Drawable d = Drawable.createFromPath(resourceBaseDir + "/" + filename + ".png");
-  
-//    d.setBounds(0, 0, 120, 120);
-    
-    Log.d("AAAA", "png :" + filename + " bs=" + d.getBounds());
-    
+
+    int start = attrs.getAttributeIntValue(null, "start", 0);
+    int end   = attrs.getAttributeIntValue(null, "end", -1);
+    if (end > start) {
+      String fmt = resourceBaseDir + "/" + filename.replaceFirst("\\d+$", "") + "%03d.png";
+      Drawable d;
+      for (int i = start; i <= end; i++) {
+        String p = String.format(fmt, i);
+        d = Drawable.createFromPath(p);
+        items.addFrame(d, duration);
+      }
+    } else {
+      Drawable d = Drawable.createFromPath(resourceBaseDir + "/" + filename + ".png");
+      Log.d("AAAA", "png :" + filename + " bs=" + d.getBounds());
 //    items.addFrame(res.getDrawable(drawable), duration);
-    items.addFrame(d, duration);
+      items.addFrame(d, duration);
+    }
   }
 
   public void parseRepeatItem(Resources res, MotionDrawable items,

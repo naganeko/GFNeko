@@ -36,6 +36,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Properties;
@@ -68,6 +69,9 @@ public class AnimationService extends Service {
       "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
   private static final String EXTRA_CHANGED_PACKAGE_LIST =
       "android.intent.extra.changed_package_list";
+
+  private int image_width = 240;
+  private int image_height = 240;
 
   private enum Behaviour {
     closer, further, whimsical
@@ -200,7 +204,7 @@ public class AnimationService extends Service {
 //    image_view.setBackgroundColor(Color.GREEN);
     
     image_params = new LayoutParams(
-        200, 200,
+        image_width, image_height,
 //        LayoutParams.WRAP_CONTENT,
 //        LayoutParams.WRAP_CONTENT,
         LayoutParams.TYPE_SYSTEM_OVERLAY,
@@ -292,24 +296,49 @@ public class AnimationService extends Service {
   
   
   //*
-    File externalStorageDirectory = Environment.getExternalStorageDirectory();
-    String path = externalStorageDirectory.getAbsolutePath();
-    Log.d("AAAA", "" + path);
-    Properties p = new Properties();
-    File pfile = new File(externalStorageDirectory, "/GFNeko/gfneko.properties");
     boolean loaded = false;
     try {
+      File externalStorageDirectory = Environment.getExternalStorageDirectory();
+      File gfnekoDir = new File(externalStorageDirectory, "/GFNeko");
+      gfnekoDir.mkdirs();
+      File skinsDir = new File(gfnekoDir, "/skins");
+      skinsDir.mkdirs();
+
+      Properties p = new Properties();
+      File pfile = new File(gfnekoDir, "gfneko.txt");
+      if (!pfile.exists()) {
+        p.setProperty("skin_folder", "");
+        p.setProperty("xml_file", "");
+        p.setProperty("width", "240");
+        p.setProperty("height", "240");
+        p.store(new FileOutputStream(pfile), "GFNeko properties file");
+        throw new IllegalStateException("No properties file");
+      }
+
       p.load(new FileInputStream(pfile));
-      Log.d("AAAA", "" + p);
-      String folder = p.getProperty("folder");
-      File dir = new File(externalStorageDirectory, "/GFNeko/skins/" + folder);
-      Log.d("AAAA", "dir=" + dir.exists());
-      Log.d("AAAA", "files=" + Arrays.toString(dir.listFiles()));
+
+      String folder = p.getProperty("skin_folder");
+      String xmlFile = p.getProperty("xml_file");
+      File dir = new File(skinsDir, "/" + folder);
+
+      {
+        int w = this.image_width;
+        int h = this.image_height;
+        try {
+          w = Integer.parseInt(p.getProperty("width"));
+          h = Integer.parseInt(p.getProperty("height"));
+          image_width = w;
+          image_height = h;
+        } catch (NumberFormatException e) {
+        }
+      }
+
+
       PackageManager pm = getPackageManager();
       ComponentName skin_comp = new ComponentName(this, NekoSkin.class);
       Resources res = pm.getResourcesForActivity(skin_comp);
   
-      MotionParams params2 = new MotionParams2(this, res, dir, null);
+      MotionParams params2 = new MotionParams2(this, res, dir, xmlFile);
       motion_state = new MotionState();
       motion_state.setParams(params2);
   
@@ -318,9 +347,7 @@ public class AnimationService extends Service {
       e.printStackTrace();
     }
     if (loaded) {
-  
       afterMotionLoaded();
-  
       return true;
     }
     //*/
