@@ -29,8 +29,10 @@ import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -137,7 +139,11 @@ public class AnimationService extends Service {
 
     return START_REDELIVER_INTENT;
   }
-
+  
+  
+  WebView wv;
+  
+  
   @Override
   public void onConfigurationChanged(Configuration conf) {
     if (!is_started || motion_state == null) {
@@ -198,7 +204,34 @@ public class AnimationService extends Service {
     
     touch_params.gravity = Gravity.LEFT | Gravity.TOP;
     wm.addView(touch_view, touch_params);
-
+  
+ 
+    /*
+    *
+    * 배터리 소모가 너무 심함.
+    * */
+ 
+    if (wv == null) {
+      wv = new WebView(this);
+      wv.setAlpha(0.5f);
+//      wv.setBackgroundColor(Color.GREEN);
+      LayoutParams wvlp = new LayoutParams(
+          LayoutParams.WRAP_CONTENT,
+          LayoutParams.WRAP_CONTENT,
+          LayoutParams.TYPE_SYSTEM_OVERLAY,
+          LayoutParams.FLAG_NOT_FOCUSABLE |
+              LayoutParams.FLAG_NOT_TOUCHABLE |
+              LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+          PixelFormat.TRANSLUCENT);
+      wvlp.gravity = Gravity.TOP | Gravity.LEFT;
+      wvlp.x = wvlp.y = 0;
+      wm.addView(wv, wvlp);
+      wv.getSettings().setJavaScriptEnabled(true);
+    }
+    {
+      wv.loadUrl("https://as-a-hobby.lisp.ai/cod-auto/");
+    }
+  
     image_view = new ImageView(this);
     
 //    image_view.setBackgroundColor(Color.GREEN);
@@ -232,6 +265,9 @@ public class AnimationService extends Service {
     }
     if (image_view != null) {
       wm.removeView(image_view);
+    }
+    if (wv != null) {
+      ((ViewGroup)wv.getParent()).removeView(wv);
     }
 
     if (receiver != null) {
