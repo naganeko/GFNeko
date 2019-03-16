@@ -17,6 +17,28 @@
     <item>0.8</item>
   </string-array>
 
+  <string-array name="pref_motion_size">
+    <item>120x120</item>
+    <item>160x160</item>
+    <item>200x200</item>
+    <item>240x240</item>
+    <item>280x280</item>
+    <item>320x320</item>
+    <item>360x360</item>
+    <item>400x400</item>
+  </string-array>
+
+  <string-array name="pref_motion_size_entryvalues">
+    <item>120</item>
+    <item>160</item>
+    <item>200</item>
+    <item>240</item>
+    <item>280</item>
+    <item>320</item>
+    <item>360</item>
+    <item>400</item>
+  </string-array>
+
   <!-- behaviour -->
   <string-array name="pref_motion_behaviour_entries">
     <item>Closer</item>

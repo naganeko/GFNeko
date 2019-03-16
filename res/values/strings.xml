@@ -2,7 +2,7 @@
 <resources>
   <string name="app_name">GF Neko</string>
 
-  <string name="skin_name_neko">IDWMod</string>
+  <string name="skin_name_neko">IDW the Many</string>
 
   <string name="notification_enable">neko is running.</string>
   <string name="notification_disable">neko is sleeping.</string>
@@ -18,6 +18,9 @@
 
   <string name="pref_motion_transparency_title">Transparency</string>
   <string name="pref_motion_transparency_summary">Transparency of neko</string>
+
+  <string name="pref_motion_size_title">Size</string>
+  <string name="pref_motion_size_summary">Size of neko</string>
 
   <string name="pref_motion_skin_title">Skin</string>
   <string name="pref_motion_skin_summary">Skin of neko</string>

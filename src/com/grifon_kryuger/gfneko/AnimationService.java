@@ -29,6 +29,7 @@ import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.ImageView;
@@ -55,6 +56,7 @@ public class AnimationService extends Service {
   public static final String PREF_KEY_ENABLE = "motion.enable";
   public static final String PREF_KEY_VISIBLE = "motion.visible";
   public static final String PREF_KEY_TRANSPARENCY = "motion.transparency";
+  public static final String PREF_KEY_SIZE = "motion.size";
   public static final String PREF_KEY_BEHAVIOUR = "motion.behaviour";
   public static final String PREF_KEY_SKIN_COMPONENT = "motion.skin";
 
@@ -69,6 +71,7 @@ public class AnimationService extends Service {
       "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
   private static final String EXTRA_CHANGED_PACKAGE_LIST =
       "android.intent.extra.changed_package_list";
+  public static final String GFNEKO_SKINS = "/GFNeko/skins";
 
   private int image_width = 240;
   private int image_height = 240;
@@ -214,9 +217,7 @@ public class AnimationService extends Service {
         PixelFormat.TRANSLUCENT);
     image_params.gravity = Gravity.LEFT | Gravity.TOP;
     wm.addView(image_view, image_params);
-    
-    
-    
+
     Log.d("AAAA", " image_params.width = " +     image_params.width
     + "  image_params.height= " +     image_params.height) ;
 
@@ -297,42 +298,21 @@ public class AnimationService extends Service {
   
   //*
     boolean loaded = false;
+    String skinPath = prefs.getString(PREF_KEY_SKIN_COMPONENT, "");
     try {
+
       File externalStorageDirectory = Environment.getExternalStorageDirectory();
-      File gfnekoDir = new File(externalStorageDirectory, "/GFNeko");
-      gfnekoDir.mkdirs();
-      File skinsDir = new File(gfnekoDir, "/skins");
+//      File gfnekoDir = new File(externalStorageDirectory, "/GFNeko");
+//      gfnekoDir.mkdirs();
+      File skinsDir = new File(externalStorageDirectory, GFNEKO_SKINS);
       skinsDir.mkdirs();
 
-      Properties p = new Properties();
-      File pfile = new File(gfnekoDir, "gfneko.txt");
-      if (!pfile.exists()) {
-        p.setProperty("skin_folder", "");
-        p.setProperty("xml_file", "");
-        p.setProperty("width", "240");
-        p.setProperty("height", "240");
-        p.store(new FileOutputStream(pfile), "GFNeko properties file");
-        throw new IllegalStateException("No properties file");
-      }
+      String[] ts = skinPath.split("/");
 
-      p.load(new FileInputStream(pfile));
+      String folder = ts[0];
+      String xmlFile = ts[1];
 
-      String folder = p.getProperty("skin_folder");
-      String xmlFile = p.getProperty("xml_file");
       File dir = new File(skinsDir, "/" + folder);
-
-      {
-        int w = this.image_width;
-        int h = this.image_height;
-        try {
-          w = Integer.parseInt(p.getProperty("width"));
-          h = Integer.parseInt(p.getProperty("height"));
-          image_width = w;
-          image_height = h;
-        } catch (NumberFormatException e) {
-        }
-      }
-
 
       PackageManager pm = getPackageManager();
       ComponentName skin_comp = new ComponentName(this, NekoSkin.class);
@@ -344,6 +324,8 @@ public class AnimationService extends Service {
   
       loaded = true;
     } catch (Exception e) {
+
+      Toast.makeText(this, "" + e.getMessage() , Toast.LENGTH_LONG).show();
       e.printStackTrace();
     }
     if (loaded) {
@@ -351,14 +333,15 @@ public class AnimationService extends Service {
       return true;
     }
     //*/
-  
-    String skin_pkg = prefs.getString(PREF_KEY_SKIN_COMPONENT, null);
-    ComponentName skin_comp =
-        (skin_pkg == null ? null :
-            ComponentName.unflattenFromString(skin_pkg));
-    if (skin_comp != null && loadMotionState(skin_comp)) {
-      return true;
-    }
+
+    ComponentName skin_comp;
+//    String skin_pkg = prefs.getString(PREF_KEY_SKIN_COMPONENT, null);
+//    skin_comp =
+//        (skin_pkg == null ? null :
+//            ComponentName.unflattenFromString(skin_pkg));
+//    if (skin_comp != null && loadMotionState(skin_comp)) {
+//      return true;
+//    }
 
     skin_comp = new ComponentName(this, NekoSkin.class);
     return loadMotionState(skin_comp);
@@ -425,8 +408,31 @@ public class AnimationService extends Service {
     motion_state.setDisplaySize(dw, dh);
     motion_state.setCurrentPosition(cx, cy);
     motion_state.setTargetPositionDirect(dw / 2, dh / 2);
+
+    refreshMotionSize();
+
   }
-  
+
+  private void refreshMotionSize() {
+    int v = 240;
+    try {
+      v = Integer.parseInt(prefs.getString(PREF_KEY_SIZE, "240"));
+    } catch (NumberFormatException e) {
+      e.printStackTrace();
+    }
+    this.image_width = this.image_height = v;
+
+    if (image_params != null && image_view != null) {
+      image_params.width = v;
+      image_params.height = v;
+      WindowManager wm =
+          (WindowManager) getSystemService(WINDOW_SERVICE);
+      wm.updateViewLayout(image_view, image_params);
+    }
+
+  }
+
+
   private void requestAnimate() {
     if (!handler.hasMessages(MSG_ANIMATE)) {
       handler.sendEmptyMessage(MSG_ANIMATE);
@@ -512,10 +518,13 @@ public class AnimationService extends Service {
   private class PreferenceChangeListener
       implements SharedPreferences.OnSharedPreferenceChangeListener {
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences prefs,
-                                          String key) {
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
       if (PREF_KEY_ENABLE.equals(key) || PREF_KEY_VISIBLE.equals(key)) {
         checkPrefEnable();
+      } else if (PREF_KEY_SIZE.equals(key)) {
+
+        refreshMotionSize();
+
       } else if (loadMotionState()) {
         requestAnimate();
       }
