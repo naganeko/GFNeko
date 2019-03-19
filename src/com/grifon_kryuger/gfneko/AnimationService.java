@@ -186,6 +186,7 @@ public class AnimationService extends Service {
     
     https://thdev.net/665
     
+    https://github.com/kpbird/android-global-touchevent
     
      */
     touch_view = new View(this);
