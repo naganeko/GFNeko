@@ -181,25 +181,40 @@ public class AnimationService extends Service {
     // touch event sink and overlay view
     WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
 
+    
+    /*
+    
+    https://thdev.net/665
+    
+    
+     */
     touch_view = new View(this);
     touch_view.setOnTouchListener(new TouchListener());
     touch_params = new LayoutParams(
         LayoutParams.WRAP_CONTENT,
         LayoutParams.WRAP_CONTENT,
 //        0, 0,
-        (ICS_OR_LATER ?
-            LayoutParams.TYPE_PHONE :
-//            LayoutParams.TYPE_SYSTEM_ALERT :
-            LayoutParams.TYPE_SYSTEM_OVERLAY),
+//        LayoutParams.TYPE_TOAST,
+        LayoutParams.TYPE_PHONE,
+//        (ICS_OR_LATER ?
+//            LayoutParams.TYPE_PHONE :
+////            LayoutParams.TYPE_SYSTEM_ALERT :
+//            LayoutParams.TYPE_SYSTEM_OVERLAY),
+        
         LayoutParams.FLAG_NOT_FOCUSABLE
+//            | LayoutParams.FLAG_LAYOUT_NO_LIMITS
       |      LayoutParams.FLAG_NOT_TOUCHABLE
       |    LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
         ,
         PixelFormat.TRANSLUCENT);
     
-//    touch_view.setBackgroundColor(0x8000FF00);
+    touch_view.setBackgroundColor(0x4000FF00);
     
-    touch_params.gravity = Gravity.LEFT | Gravity.TOP;
+    touch_params.gravity =
+        0
+        | Gravity.CENTER_HORIZONTAL
+        | Gravity.CENTER_VERTICAL
+    ;
     wm.addView(touch_view, touch_params);
 
     image_view = new ImageView(this);
@@ -218,8 +233,8 @@ public class AnimationService extends Service {
     image_params.gravity = Gravity.LEFT | Gravity.TOP;
     wm.addView(image_view, image_params);
 
-    Log.d("AAAA", " image_params.width = " +     image_params.width
-    + "  image_params.height= " +     image_params.height) ;
+//    Log.d("AAAA", " image_params.width = " +     image_params.width
+//    + "  image_params.height= " +     image_params.height) ;
 
     requestAnimate();
   }
@@ -571,11 +586,8 @@ public class AnimationService extends Service {
   private class TouchListener implements View.OnTouchListener {
     public boolean onTouch(View v, MotionEvent ev) {
       
-      
-      Log.d("AAAA", ev.getX() + " , " + ev.getY() + " , act=" + ev.getAction());
-  
-  
-      Log.d("AAAA", "image: " + image_view.getWidth() + " , " + image_view.getHeight());
+      Log.d("AAAA", ev.getRawX() + " , " + ev.getRawY() + " , act=" + ev.getAction());
+//      Log.d("AAAA", "image: " + image_view.getWidth() + " , " + image_view.getHeight());
       
   
       if (motion_state == null) {
@@ -819,7 +831,7 @@ public class AnimationService extends Service {
 
     private void setTargetPosition(float x, float y) {
 
-      Log.d("AAAA", "x=" + x + " y=" + y);
+//      Log.d("AAAA", "x=" + x + " y=" + y);
 
       if (!ICS_OR_LATER) {
         long cur_time = System.currentTimeMillis();
