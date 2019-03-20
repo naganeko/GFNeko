@@ -26,6 +26,9 @@
     <item>320x320</item>
     <item>360x360</item>
     <item>400x400</item>
+    <item>440x440</item>
+    <item>480x480</item>
+    <item>520x520</item>
   </string-array>
 
   <string-array name="pref_motion_size_entryvalues">
@@ -37,6 +40,9 @@
     <item>320</item>
     <item>360</item>
     <item>400</item>
+    <item>440</item>
+    <item>480</item>
+    <item>520</item>
   </string-array>
 
   <!-- behaviour -->

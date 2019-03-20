@@ -187,7 +187,11 @@ public class AnimationService extends Service {
     https://thdev.net/665
     
     https://github.com/kpbird/android-global-touchevent
-    
+
+
+    https://stackoverflow.com/questions/32224452/android-unable-to-add-window-permission-denied-for-this-window-type
+
+
      */
     touch_view = new View(this);
     touch_view.setOnTouchListener(new TouchListener());
@@ -209,7 +213,7 @@ public class AnimationService extends Service {
         ,
         PixelFormat.TRANSLUCENT);
     
-    touch_view.setBackgroundColor(0x4000FF00);
+//    touch_view.setBackgroundColor(0x4000FF00);
     
     touch_params.gravity =
         0

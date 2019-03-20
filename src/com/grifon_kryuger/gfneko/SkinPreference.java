@@ -110,26 +110,6 @@ public class SkinPreference extends DialogPreference {
               }
             })
         .setPositiveButton(null, null)
-//        .setNeutralButton(
-//            R.string.pref_skin_search_button,
-//            new DialogInterface.OnClickListener() {
-//              public void onClick(DialogInterface dialog, int witch) {
-//                Intent intent = new Intent(Intent.ACTION_VIEW);
-//                intent.setData(
-//                    Uri.parse(getContext().getString(
-//                        R.string.skin_search_uri)));
-//                try {
-//                  getContext().startActivity(intent);
-//                } catch (ActivityNotFoundException e) {
-//                  Toast.makeText(getContext(),
-//                      R.string.msg_market_not_found,
-//                      Toast.LENGTH_SHORT)
-//                      .show();
-//                }
-//
-//                dialog.dismiss();
-//              }
-//            })
     ;
   }
 
@@ -183,48 +163,55 @@ public class SkinPreference extends DialogPreference {
     }
 
 
-    File externalStorageDirectory = Environment.getExternalStorageDirectory();
-    File skinsRootDir = new File(externalStorageDirectory, AnimationService.GFNEKO_SKINS);
+    try {
 
-    if (!skinsRootDir.exists()) {
-      Toast.makeText(getContext(), "GFNeko/skins Folder Not Found !!", Toast.LENGTH_LONG)
-          .show();;
-      return list;
-    }
+      File externalStorageDirectory = Environment.getExternalStorageDirectory();
+      File skinsRootDir = new File(externalStorageDirectory, AnimationService.GFNEKO_SKINS);
 
-    File[] skinDirs = skinsRootDir.listFiles(new FileFilter() {
-      @Override
-      public boolean accept(File pathname) {
-        return pathname.isAbsolute();
+      if (!skinsRootDir.exists()) {
+        Toast.makeText(getContext(), "GFNeko/skins Folder Not Found !!", Toast.LENGTH_LONG)
+            .show();;
+        return list;
       }
-    });
 
-    for (File skinDir : skinDirs) {
-      String[] xmls = skinDir.list(new FilenameFilter() {
+      File[] skinDirs = skinsRootDir.listFiles(new FileFilter() {
         @Override
-        public boolean accept(File dir, String filename) {
-          return filename.endsWith(".xml");
+        public boolean accept(File pathname) {
+          return pathname.isDirectory();
         }
       });
 
-      String dirName = skinDir.getName();
+      for (File skinDir : skinDirs) {
+        String[] xmls = skinDir.list(new FilenameFilter() {
+          @Override
+          public boolean accept(File dir, String filename) {
+            return filename.endsWith(".xml");
+          }
+        });
 
-      for (String xml : xmls) {
-        String n = dirName + "/" + xml;
+        String dirName = skinDir.getName();
 
-        Map<String, Object> data = new HashMap<String, Object>();
-//        data.put(KEY_ICON, info.loadIcon(pm));
-        data.put(KEY_LABEL, n);
-//        data.put(KEY_ICON, info.loadIcon(pm));
-//        data.put(KEY_LABEL, info.loadLabel(pm));
-//        data.put(KEY_CHECK, Boolean.valueOf(comp.equals(val)));
-        data.put(KEY_CHECK, n.equals(val));
-        data.put(KEY_COMPONENT, n);
+        for (String xml : xmls) {
+          String n = dirName + "/" + xml;
 
-        list.add(data);
+          Map<String, Object> data = new HashMap<String, Object>();
+  //        data.put(KEY_ICON, info.loadIcon(pm));
+          data.put(KEY_LABEL, n);
+  //        data.put(KEY_ICON, info.loadIcon(pm));
+  //        data.put(KEY_LABEL, info.loadLabel(pm));
+  //        data.put(KEY_CHECK, Boolean.valueOf(comp.equals(val)));
+          data.put(KEY_CHECK, n.equals(val));
+          data.put(KEY_COMPONENT, n);
+
+          list.add(data);
+        }
+
+
       }
 
-
+    } catch (Exception e) {
+      Toast.makeText(getContext(), "" + e.getMessage(), Toast.LENGTH_LONG).show();
+      e.printStackTrace();
     }
 
 
