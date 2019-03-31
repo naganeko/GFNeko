@@ -12,6 +12,9 @@
   <string name="pref_motion_enable_title">Enable a neko</string>
   <string name="pref_motion_enable_summary">To neko, or not to neko.</string>
 
+  <string name="pref_battery_enable_title">Time &amp; Battery</string>
+  <string name="pref_battery_enable_summary">Show Current Time &amp; Battery Level</string>
+
   <string name="pref_motion_behaviour_title">Behaviour</string>
   <string name="pref_motion_behaviour_summary">Behaviour of neko</string>
   <string name="pref_motion_behaviour_default">whimsical</string>

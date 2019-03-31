@@ -25,6 +25,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -33,6 +34,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -40,6 +42,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
@@ -54,6 +57,7 @@ public class AnimationService extends Service {
   public static final String META_KEY_SKIN = "com.grifon_kryuger.gfneko.skin";
 
   public static final String PREF_KEY_ENABLE = "motion.enable";
+  public static final String PREF_KEY_BATTERY = "battery.enable";
   public static final String PREF_KEY_VISIBLE = "motion.visible";
   public static final String PREF_KEY_TRANSPARENCY = "motion.transparency";
   public static final String PREF_KEY_SIZE = "motion.size";
@@ -63,8 +67,10 @@ public class AnimationService extends Service {
   private static final int NOTIF_ID = 1;
 
   private static final int MSG_ANIMATE = 1;
+  private static final int MSG_TXT = 1;
 
   private static final long ANIMATION_INTERVAL = 125; // msec
+  private static final long TV_INTERVAL = 250; // msec
   private static final long BEHAVIOUR_CHANGE_DURATION = 4000; // msec
 
   private static final String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE =
@@ -75,6 +81,8 @@ public class AnimationService extends Service {
 
   private int image_width = 240;
   private int image_height = 240;
+
+  boolean showTimeBattery = true;
 
   private enum Behaviour {
     closer, further, whimsical
@@ -90,6 +98,7 @@ public class AnimationService extends Service {
   private PreferenceChangeListener pref_listener;
 
   private Handler handler;
+  private Handler tvHandler;
   private MotionState motion_state = null;
   private Random random;
   private View touch_view = null;
@@ -97,6 +106,14 @@ public class AnimationService extends Service {
   private LayoutParams touch_params = null;
   private LayoutParams image_params = null;
   private BroadcastReceiver receiver = null;
+
+  TextView textV;
+  private LayoutParams textParams = null;
+
+  ImageView balloonV;
+  LayoutParams balloonParams = null;
+
+
 
   @Override
   public void onCreate() {
@@ -107,6 +124,14 @@ public class AnimationService extends Service {
         return onHandleMessage(msg);
       }
     });
+
+    tvHandler = new Handler(new Handler.Callback() {
+      @Override
+      public boolean handleMessage(Message msg) {
+        return onTextVHandleMessage(msg);
+      }
+    });
+
     random = new Random();
     prefs = PreferenceManager.getDefaultSharedPreferences(this);
   }
@@ -170,28 +195,27 @@ public class AnimationService extends Service {
     receiver = new Receiver();
 
     filter = new IntentFilter();
-    filter.addAction(Intent.ACTION_PACKAGE_ADDED);
-    filter.addDataScheme("package");
+
+    filter.addAction(Intent.ACTION_BATTERY_CHANGED);
+    filter.addAction(Intent.ACTION_BATTERY_LOW);
+    filter.addAction(Intent.ACTION_BATTERY_OKAY);
+
+//    filter.addAction(Intent.ACTION_PACKAGE_ADDED);
+//    filter.addDataScheme("package");
     registerReceiver(receiver, filter);
 
-    filter = new IntentFilter();
-    filter.addAction(ACTION_EXTERNAL_APPLICATIONS_AVAILABLE);
-    registerReceiver(receiver, filter);
+//    filter = new IntentFilter();
+//    filter.addAction(ACTION_EXTERNAL_APPLICATIONS_AVAILABLE);
+//    registerReceiver(receiver, filter);
 
     // touch event sink and overlay view
     WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
 
-    
     /*
     
     https://thdev.net/665
-    
     https://github.com/kpbird/android-global-touchevent
-
-
     https://stackoverflow.com/questions/32224452/android-unable-to-add-window-permission-denied-for-this-window-type
-
-
      */
     touch_view = new View(this);
     touch_view.setOnTouchListener(new TouchListener());
@@ -223,9 +247,7 @@ public class AnimationService extends Service {
     wm.addView(touch_view, touch_params);
 
     image_view = new ImageView(this);
-    
-//    image_view.setBackgroundColor(Color.GREEN);
-    
+
     image_params = new LayoutParams(
         image_width, image_height,
 //        LayoutParams.WRAP_CONTENT,
@@ -238,10 +260,59 @@ public class AnimationService extends Service {
     image_params.gravity = Gravity.LEFT | Gravity.TOP;
     wm.addView(image_view, image_params);
 
+//    image_view.setBackgroundColor(Color.YELLOW);
 //    Log.d("AAAA", " image_params.width = " +     image_params.width
 //    + "  image_params.height= " +     image_params.height) ;
 
-    requestAnimate();
+
+    final int bW = 100;
+    int bH = (int) (bW * .8);
+    balloonV = new ImageView(this);
+    balloonV.setImageResource(R.drawable.balloon);
+    balloonParams = new LayoutParams(
+        bW, bH,
+//        image_width, LayoutParams.WRAP_CONTENT, // 최소크기
+        LayoutParams.TYPE_SYSTEM_OVERLAY,
+        LayoutParams.FLAG_NOT_FOCUSABLE |
+            LayoutParams.FLAG_NOT_TOUCHABLE |
+            LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+        PixelFormat.TRANSLUCENT);
+    balloonParams.gravity = Gravity.LEFT | Gravity.TOP;
+    wm.addView(balloonV, balloonParams);
+
+    textV = new TextView(this);
+    textParams = new LayoutParams(
+//        image_width, image_height,
+        bW, (int) (bH * 0.75), // 최소크기
+        LayoutParams.TYPE_SYSTEM_OVERLAY,
+        LayoutParams.FLAG_NOT_FOCUSABLE |
+            LayoutParams.FLAG_NOT_TOUCHABLE |
+            LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+        PixelFormat.TRANSLUCENT);
+    textParams.gravity = Gravity.LEFT | Gravity.TOP | Gravity.CENTER;
+
+//    textV.setBackgroundColor(0x8000FF00);
+    textV.setTextColor(0xFF000000);
+    textV.setGravity(Gravity.CENTER);
+
+    textV.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
+//    textV.setGravity(Gravity.CENTER);
+
+    wm.addView(textV, textParams);
+
+    setBalloonVisible(showTimeBattery);
+
+      requestAnimate();
+  }
+
+  void setBalloonVisible(boolean v) {
+    if (v) {
+      textV.setVisibility(View.VISIBLE);
+      balloonV.setVisibility(View.VISIBLE);
+    } else {
+      textV.setVisibility(View.INVISIBLE);
+      balloonV.setVisibility(View.INVISIBLE);
+    }
   }
 
   private void stopAnimation() {
@@ -255,6 +326,10 @@ public class AnimationService extends Service {
       wm.removeView(image_view);
     }
 
+    if (textV != null) {
+      wm.removeView(textV);
+    }
+
     if (receiver != null) {
       unregisterReceiver(receiver);
     }
@@ -265,6 +340,8 @@ public class AnimationService extends Service {
     receiver = null;
 
     handler.removeMessages(MSG_ANIMATE);
+
+    tvHandler.removeMessages(MSG_TXT);
   }
 
   private void toggleAnimation() {
@@ -319,6 +396,9 @@ public class AnimationService extends Service {
   //*
     boolean loaded = false;
     String skinPath = prefs.getString(PREF_KEY_SKIN_COMPONENT, "");
+
+//    showTimeBattery =  prefs.getBoolean(PREF_KEY_BATTERY, false);
+
     try {
 
       File externalStorageDirectory = Environment.getExternalStorageDirectory();
@@ -418,7 +498,10 @@ public class AnimationService extends Service {
     }
     
     String alpha_str = prefs.getString(PREF_KEY_TRANSPARENCY, "0.0");
-    motion_state.alpha = (int) ((1 - Float.valueOf(alpha_str)) * 0xff);
+    float opacity = 1 - Float.valueOf(alpha_str);
+    int alpha = (int) (opacity * 0xff);
+    motion_state.alpha = alpha;
+//    textV.setAlpha(opacity);
     
     motion_state.setBehaviour(
         Behaviour.valueOf(
@@ -428,6 +511,8 @@ public class AnimationService extends Service {
     motion_state.setDisplaySize(dw, dh);
     motion_state.setCurrentPosition(cx, cy);
     motion_state.setTargetPositionDirect(dw / 2, dh / 2);
+
+
 
     refreshMotionSize();
 
@@ -442,11 +527,11 @@ public class AnimationService extends Service {
     }
     this.image_width = this.image_height = v;
 
+    WindowManager wm =
+        (WindowManager) getSystemService(WINDOW_SERVICE);
     if (image_params != null && image_view != null) {
       image_params.width = v;
       image_params.height = v;
-      WindowManager wm =
-          (WindowManager) getSystemService(WINDOW_SERVICE);
       wm.updateViewLayout(image_view, image_params);
     }
 
@@ -457,7 +542,12 @@ public class AnimationService extends Service {
     if (!handler.hasMessages(MSG_ANIMATE)) {
       handler.sendEmptyMessage(MSG_ANIMATE);
     }
+    if (!tvHandler.hasMessages(MSG_TXT)) {
+      tvHandler.sendEmptyMessage(MSG_TXT);
+    }
   }
+
+  int counter = 0;
 
   private void updateDrawable() {
     if (motion_state == null || image_view == null) {
@@ -468,13 +558,23 @@ public class AnimationService extends Service {
     if (drawable == null) {
       return;
     }
-  
-
 
     drawable.setAlpha(motion_state.alpha);
     image_view.setImageDrawable(drawable);
     drawable.stop();
     drawable.start();
+
+    balloonV.getDrawable().setAlpha(motion_state.alpha);
+
+  }
+
+  void updateTextV() {
+    WindowManager wm =
+        (WindowManager) getSystemService(WINDOW_SERVICE);
+    wm.updateViewLayout(image_view, image_params);
+//    textParams.x = pt.x + 100;
+//    textParams.y = pt.y;
+    wm.updateViewLayout(textV, textParams);
   }
 
   private void updatePosition() {
@@ -485,6 +585,20 @@ public class AnimationService extends Service {
     WindowManager wm =
         (WindowManager) getSystemService(WINDOW_SERVICE);
     wm.updateViewLayout(image_view, image_params);
+
+    if (
+        textV != null
+            && balloonV != null) {
+      int w = image_view.getWidth();
+      int h = image_view.getHeight();
+      int cx = pt.x + w / 2;
+      balloonParams.x = cx - balloonV.getWidth() / 2;
+      balloonParams.y = pt.y - (int) (balloonV.getHeight() * 0.8);
+      textParams.x = cx - textV.getWidth() / 2;
+      textParams.y = balloonParams.y + 3;
+      wm.updateViewLayout(textV, textParams);
+      wm.updateViewLayout(balloonV, balloonParams);
+    }
   }
 
   private void updateToNext() {
@@ -497,10 +611,27 @@ public class AnimationService extends Service {
     }
   }
 
-  private boolean onHandleMessage(Message msg) {
+  private boolean onTextVHandleMessage(Message msg) {
+    tvHandler.removeMessages(msg.what);
+    if (showTimeBattery) {
+      Date dt = new Date();
+      String ts = String.format("%02d:%02d", dt.getHours(), dt.getMinutes());
+      if (batteryInfo != null) {
+//      batteryInfo.getLevel() + batteryInfo.get
+        textV.setText(ts + "\n" + batteryInfo.level + "%");
+      } else {
+        textV.setText(ts + "\n" + "no battery info.");
+      }
+      tvHandler.sendEmptyMessageDelayed(MSG_TXT, TV_INTERVAL);
+    }
+    return true;
+  }
+
+    private boolean onHandleMessage(Message msg) {
     switch (msg.what) {
       case MSG_ANIMATE:
         handler.removeMessages(MSG_ANIMATE);
+
 
         motion_state.updateState();
         if (motion_state.isStateChanged() ||
@@ -526,6 +657,8 @@ public class AnimationService extends Service {
   private boolean checkPrefEnable() {
     boolean enable = prefs.getBoolean(PREF_KEY_ENABLE, true);
     boolean visible = prefs.getBoolean(PREF_KEY_VISIBLE, true);
+    showTimeBattery =  prefs.getBoolean(PREF_KEY_BATTERY, false);
+
     if (!enable || !visible) {
       startService(new Intent(this, AnimationService.class)
           .setAction(ACTION_STOP));
@@ -542,49 +675,81 @@ public class AnimationService extends Service {
       if (PREF_KEY_ENABLE.equals(key) || PREF_KEY_VISIBLE.equals(key)) {
         checkPrefEnable();
       } else if (PREF_KEY_SIZE.equals(key)) {
-
         refreshMotionSize();
-
+      } else if (PREF_KEY_BATTERY.equals(key)) {
+        showTimeBattery = prefs.getBoolean(PREF_KEY_BATTERY, false);
+        setBalloonVisible(showTimeBattery);
       } else if (loadMotionState()) {
         requestAnimate();
       }
     }
   }
 
+  BatteryInfo batteryInfo;
+  boolean batteryOk = true;
+
   private class Receiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-      String[] pkgnames = null;
-      if (Intent.ACTION_PACKAGE_ADDED.equals(intent.getAction()) &&
-          intent.getData() != null) {
-        pkgnames = new String[]{
-            intent.getData().getEncodedSchemeSpecificPart()};
-      } else if (ACTION_EXTERNAL_APPLICATIONS_AVAILABLE.equals(
-          intent.getAction())) {
-        pkgnames = intent.getStringArrayExtra(
-            EXTRA_CHANGED_PACKAGE_LIST);
-      }
-      if (pkgnames == null) {
-        return;
+
+      if (Intent.ACTION_BATTERY_CHANGED.equals(intent.getAction())) {
+        BatteryInfo batteryInfo = new BatteryInfo(intent);
+
+        AnimationService.this.batteryInfo = batteryInfo;
+
+        requestAnimate();
+//        Intent updateIntent = new Intent(context, UpdateService.class);
+//        updateIntent.setAction(UpdateService.ACTION_BATTERY_CHANGED);
+//        batteryInfo.saveToIntent(updateIntent);
+//        context.startService(updateIntent);
+      } else if (Intent.ACTION_BATTERY_LOW.equals(intent.getAction())) {
+
+          batteryOk = false;
+          requestAnimate();
+
+//        Intent updateIntent = new Intent(context, UpdateService.class);
+//        updateIntent.setAction(UpdateService.ACTION_BATTERY_LOW);
+//        context.startService(updateIntent);
+      } else if (Intent.ACTION_BATTERY_OKAY.equals(intent.getAction())) {
+        batteryOk = true;
+        requestAnimate();
+//        Intent updateIntent = new Intent(context, UpdateService.class);
+//        updateIntent.setAction(UpdateService.ACTION_BATTERY_OKAY);
+//        context.startService(updateIntent);
       }
 
-      String skin = prefs.getString(PREF_KEY_SKIN_COMPONENT, null);
-      ComponentName skin_comp =
-          (skin == null ? null :
-              ComponentName.unflattenFromString(skin));
-      if (skin_comp == null) {
-        return;
-      }
 
-      String skin_pkg = skin_comp.getPackageName();
-      for (String pkgname : pkgnames) {
-        if (skin_pkg.equals(pkgname)) {
-          if (loadMotionState()) {
-            requestAnimate();
-          }
-          break;
-        }
-      }
+//      String[] pkgnames = null;
+//      if (Intent.ACTION_PACKAGE_ADDED.equals(intent.getAction()) &&
+//          intent.getData() != null) {
+//        pkgnames = new String[]{
+//            intent.getData().getEncodedSchemeSpecificPart()};
+//      } else if (ACTION_EXTERNAL_APPLICATIONS_AVAILABLE.equals(
+//          intent.getAction())) {
+//        pkgnames = intent.getStringArrayExtra(
+//            EXTRA_CHANGED_PACKAGE_LIST);
+//      }
+//      if (pkgnames == null) {
+//        return;
+//      }
+//
+//      String skin = prefs.getString(PREF_KEY_SKIN_COMPONENT, null);
+//      ComponentName skin_comp =
+//          (skin == null ? null :
+//              ComponentName.unflattenFromString(skin));
+//      if (skin_comp == null) {
+//        return;
+//      }
+//
+//      String skin_pkg = skin_comp.getPackageName();
+//      for (String pkgname : pkgnames) {
+//        if (skin_pkg.equals(pkgname)) {
+//          if (loadMotionState()) {
+//            requestAnimate();
+//          }
+//          break;
+//        }
+//      }
     }
   }
 
@@ -646,7 +811,11 @@ public class AnimationService extends Service {
 
     private MotionEndListener on_motion_end = new MotionEndListener();
 
+
+
     private void updateState() {
+
+
       state_changed = false;
       position_moved = false;
 
@@ -953,4 +1122,8 @@ public class AnimationService extends Service {
       }
     }
   }
+
+
+
+
 }
