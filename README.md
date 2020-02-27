@@ -18,5 +18,3 @@ How To Use
 
 - https://gall.dcinside.com/m/micateam/890028  ( Korean )
 
-
-
