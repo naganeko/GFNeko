@@ -241,8 +241,8 @@ public class AnimationService extends Service {
         .setContentIntent(intent)
         .setSmallIcon(start ? R.drawable.mati1 : R.drawable.sleep1)
         .setContentTitle(getString(R.string.app_name))
-        .setContentText(getString(start? R.string.notification_enable : R.string.notification_disable))
-        ;
+        .setContentText(getString(start ? R.string.notification_enable : R.string.notification_disable))
+    ;
 
 //    Notification notif = new Notification(
 //        (start ? R.drawable.mati1 : R.drawable.sleep1), null, 0);
