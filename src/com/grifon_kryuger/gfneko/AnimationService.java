@@ -368,8 +368,8 @@ public class AnimationService extends Service {
 //        .setSmallIcon(start ? R.drawable.mati1 : R.drawable.sleep1)
         .setSmallIcon(R.drawable.icon)
         .setContentTitle(getString(R.string.app_name))
-        .setContentText(getString(start? R.string.notification_enable : R.string.notification_disable))
-        ;
+        .setContentText(getString(start ? R.string.notification_enable : R.string.notification_disable))
+    ;
 
     Notification notif = builder.build();
 
