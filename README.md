@@ -6,6 +6,9 @@ GFNeko
 ![screenshot1](https://naganeko.github.io/GFNeko/images/screenshot.jpg)
 
 
+Download
+------------
+https://github.com/naganeko/GFNeko/releases/tag/v0.1.5.1
 
 Introduction
 ------------
