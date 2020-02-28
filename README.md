@@ -1,6 +1,12 @@
 GFNeko
 =====
 
+![screenshot2](https://naganeko.github.io/GFNeko/images/shark1.jpg)
+
+![screenshot1](https://naganeko.github.io/GFNeko/images/screenshot.jpg)
+
+
+
 Introduction
 ------------
 GF version of [ANeko](https://github.com/lllllT/ANeko)
