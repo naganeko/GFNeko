@@ -1,0 +1,295 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+MERGED from [androidx.multidex:multidex:2.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/19e84e92909b8914ecd98341cdb0b265/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/0db51bfebffdf02cab6c3906aa1040ae/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.preference:preference:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/294c6b9f4a36309a96edfa3a4dcb76c5/preference-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.4.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/2cbed10809c41f825becb9183e78a5be/appcompat-1.4.0-alpha03/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/3dfbfe02bbb582980615633bd4eefc97/fragment-1.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.3] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d128facc77236ff5d81a90815740df63/jetified-activity-1.2.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/69afa869bc65379765fcd1a6790a3c7f/jetified-appcompat-resources-1.4.0-alpha03/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b8e1c55b226b4c886055bf095cd57a2f/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b913b577636afb646741ffd904028e15/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9bcad8df747e7e541c668492e993a22d/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/1b15921a8b11fd0ee3323a3d9c1d7456/jetified-emoji2-views-helper-1.0.0-alpha03/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b9a8ccdf08677e6ebe8a29448e9bae04/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/1e3214591e5f847e6b5b2333c34f548f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/818f45328ee8f5b99bad88c27c6cc009/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/f8265d5cb033aea9b3b2b59393038f53/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d9a1f9c79beb812a29c08dec8e929987/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/e1c1a328fa5c525d8a813cf3d0ad18ce/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/7430e01f2c6ea8ff3578619715c15e18/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/3438716bbde0c4ae93b6b3ca42413f5c/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/a4aa212df090916fdc5167a61460eb35/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d7ef7342eb80ff707691a83b9012e6a9/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.7.0-alpha01] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/22802dacf04f55d4b2f1e49dd6e93e62/core-1.7.0-alpha01/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9f5395c9e2c4a1a11a43e64f5d81258c/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d2ff709217adbaee68cbce4e138923f2/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b3cfbfb1b9d3c28903be03b381ffe5a1/jetified-savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/2173da8f0e3b2f5d6ed51ddfa294cf15/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9c1a19876166723a3f4a522f5e580c9e/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ad067ab5a3334f7d8d5417156a403faa/jetified-startup-runtime-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ff8dbfa10da45676d6eca019f7a5273b/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/e3a7d3b723deff8b2b903c0665652c62/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/475447259d8237c8605745086fc55597/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/302cab43b38853b783fdae5ed6df95df/lifecycle-runtime-2.4.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/69846ae0a25a5c26a4168a449d371740/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/a81ff3a6f4fe4cdba627ce49c2369465/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/815bb9272ee789daabc21bc15b42e2c3/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b93e2b8a7319b8231fdc1936a598b860/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/f8503f66578d12caa389b09e1e5eca48/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/5da2fabf987620f20c153879c4806659/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+	package
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:4:5-40
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:1-53:12
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:7:22-75
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:8:5-9:40
+	tools:ignore
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:9:9-37
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:8:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:10:22-77
+uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:11:5-12:40
+	tools:ignore
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:12:9-37
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:11:22-79
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:13:22-74
+application
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:15:5-52:19
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/0db51bfebffdf02cab6c3906aa1040ae/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/0db51bfebffdf02cab6c3906aa1040ae/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.core:core:1.7.0-alpha01] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/22802dacf04f55d4b2f1e49dd6e93e62/core-1.7.0-alpha01/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.7.0-alpha01] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/22802dacf04f55d4b2f1e49dd6e93e62/core-1.7.0-alpha01/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9c1a19876166723a3f4a522f5e580c9e/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9c1a19876166723a3f4a522f5e580c9e/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ad067ab5a3334f7d8d5417156a403faa/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ad067ab5a3334f7d8d5417156a403faa/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.7.0-alpha01] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/22802dacf04f55d4b2f1e49dd6e93e62/core-1.7.0-alpha01/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:17:9-41
+	tools:ignore
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:19:9-60
+	android:icon
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:16:9-38
+	android:theme
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:18:9-56
+activity#com.grifon_kryuger.gfneko.GFNekoActivity
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:21:9-28:20
+	android:label
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:23:13-45
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:22:13-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:24:13-27:29
+action#android.intent.action.MAIN
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:25:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:26:27-74
+receiver#com.grifon_kryuger.gfneko.GFNekoReceiver
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:30:9-38:20
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:30:19-49
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:31:13-33:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:32:17-79
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:32:25-76
+intent-filter#action:name:android.intent.action.PACKAGE_REPLACED+data:scheme:package
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:34:13-37:29
+action#android.intent.action.PACKAGE_REPLACED
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:35:17-81
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:35:25-78
+data
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:36:17-50
+	android:scheme
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:36:23-47
+service#com.grifon_kryuger.gfneko.AnimationService
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:40:9-53
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:40:18-50
+activity#com.grifon_kryuger.gfneko.NekoSkin
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:42:9-51:20
+	android:label
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:44:13-51
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:43:13-37
+intent-filter#action:name:com.grifon_kryuger.gfneko.action.GET_SKIN
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:45:13-47:29
+action#com.grifon_kryuger.gfneko.action.GET_SKIN
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:46:17-84
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:46:25-81
+meta-data#com.grifon_kryuger.gfneko.skin
+ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:48:13-50:48
+	android:resource
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:50:17-45
+	android:name
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:49:17-62
+uses-sdk
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+MERGED from [androidx.multidex:multidex:2.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/19e84e92909b8914ecd98341cdb0b265/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/19e84e92909b8914ecd98341cdb0b265/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/0db51bfebffdf02cab6c3906aa1040ae/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/0db51bfebffdf02cab6c3906aa1040ae/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/294c6b9f4a36309a96edfa3a4dcb76c5/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/294c6b9f4a36309a96edfa3a4dcb76c5/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/2cbed10809c41f825becb9183e78a5be/appcompat-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/2cbed10809c41f825becb9183e78a5be/appcompat-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/3dfbfe02bbb582980615633bd4eefc97/fragment-1.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.4] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/3dfbfe02bbb582980615633bd4eefc97/fragment-1.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.3] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d128facc77236ff5d81a90815740df63/jetified-activity-1.2.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.3] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d128facc77236ff5d81a90815740df63/jetified-activity-1.2.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/69afa869bc65379765fcd1a6790a3c7f/jetified-appcompat-resources-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/69afa869bc65379765fcd1a6790a3c7f/jetified-appcompat-resources-1.4.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b8e1c55b226b4c886055bf095cd57a2f/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b8e1c55b226b4c886055bf095cd57a2f/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b913b577636afb646741ffd904028e15/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b913b577636afb646741ffd904028e15/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9bcad8df747e7e541c668492e993a22d/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9bcad8df747e7e541c668492e993a22d/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/1b15921a8b11fd0ee3323a3d9c1d7456/jetified-emoji2-views-helper-1.0.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/1b15921a8b11fd0ee3323a3d9c1d7456/jetified-emoji2-views-helper-1.0.0-alpha03/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b9a8ccdf08677e6ebe8a29448e9bae04/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b9a8ccdf08677e6ebe8a29448e9bae04/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/1e3214591e5f847e6b5b2333c34f548f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/1e3214591e5f847e6b5b2333c34f548f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/818f45328ee8f5b99bad88c27c6cc009/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/818f45328ee8f5b99bad88c27c6cc009/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/f8265d5cb033aea9b3b2b59393038f53/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/f8265d5cb033aea9b3b2b59393038f53/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d9a1f9c79beb812a29c08dec8e929987/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d9a1f9c79beb812a29c08dec8e929987/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/e1c1a328fa5c525d8a813cf3d0ad18ce/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/e1c1a328fa5c525d8a813cf3d0ad18ce/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/7430e01f2c6ea8ff3578619715c15e18/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/7430e01f2c6ea8ff3578619715c15e18/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/3438716bbde0c4ae93b6b3ca42413f5c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/3438716bbde0c4ae93b6b3ca42413f5c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/a4aa212df090916fdc5167a61460eb35/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/a4aa212df090916fdc5167a61460eb35/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d7ef7342eb80ff707691a83b9012e6a9/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d7ef7342eb80ff707691a83b9012e6a9/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.7.0-alpha01] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/22802dacf04f55d4b2f1e49dd6e93e62/core-1.7.0-alpha01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0-alpha01] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/22802dacf04f55d4b2f1e49dd6e93e62/core-1.7.0-alpha01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9f5395c9e2c4a1a11a43e64f5d81258c/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9f5395c9e2c4a1a11a43e64f5d81258c/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d2ff709217adbaee68cbce4e138923f2/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/d2ff709217adbaee68cbce4e138923f2/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b3cfbfb1b9d3c28903be03b381ffe5a1/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b3cfbfb1b9d3c28903be03b381ffe5a1/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/2173da8f0e3b2f5d6ed51ddfa294cf15/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/2173da8f0e3b2f5d6ed51ddfa294cf15/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9c1a19876166723a3f4a522f5e580c9e/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/9c1a19876166723a3f4a522f5e580c9e/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ad067ab5a3334f7d8d5417156a403faa/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ad067ab5a3334f7d8d5417156a403faa/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ff8dbfa10da45676d6eca019f7a5273b/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ff8dbfa10da45676d6eca019f7a5273b/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/e3a7d3b723deff8b2b903c0665652c62/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/e3a7d3b723deff8b2b903c0665652c62/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/475447259d8237c8605745086fc55597/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/475447259d8237c8605745086fc55597/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/302cab43b38853b783fdae5ed6df95df/lifecycle-runtime-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/302cab43b38853b783fdae5ed6df95df/lifecycle-runtime-2.4.0-alpha02/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/69846ae0a25a5c26a4168a449d371740/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/69846ae0a25a5c26a4168a449d371740/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/a81ff3a6f4fe4cdba627ce49c2369465/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/a81ff3a6f4fe4cdba627ce49c2369465/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/815bb9272ee789daabc21bc15b42e2c3/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/815bb9272ee789daabc21bc15b42e2c3/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b93e2b8a7319b8231fdc1936a598b860/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/b93e2b8a7319b8231fdc1936a598b860/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/f8503f66578d12caa389b09e1e5eca48/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/f8503f66578d12caa389b09e1e5eca48/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/5da2fabf987620f20c153879c4806659/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/5da2fabf987620f20c153879c4806659/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+		ADDED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ad067ab5a3334f7d8d5417156a403faa/jetified-startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.0.0] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/ad067ab5a3334f7d8d5417156a403faa/jetified-startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:30:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:28:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:27:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:32:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:32:17-78

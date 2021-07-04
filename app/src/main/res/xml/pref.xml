@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_cat_motion">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="motion.enable"
+            android:summary="@string/pref_motion_enable_summary"
+            android:title="@string/pref_motion_enable_title" />
+        <ListPreference
+            android:defaultValue="0.0"
+            android:entries="@array/pref_motion_transparency_entries"
+            android:entryValues="@array/pref_motion_transparency_entryvalues"
+            android:key="motion.transparency"
+            android:summary="@string/pref_motion_transparency_summary"
+            android:title="@string/pref_motion_transparency_title" />
+        <ListPreference
+            android:defaultValue="240"
+            android:entries="@array/pref_motion_size"
+            android:entryValues="@array/pref_motion_size_entryvalues"
+            android:key="motion.size"
+            android:summary="@string/pref_motion_size_summary"
+            android:title="@string/pref_motion_size_title" />
+        <ListPreference
+            android:defaultValue="com.grifon_kryuger.gfneko/com.grifon_kryuger.gfneko.NekoSkin"
+            android:dialogTitle="@string/pref_skin_dialog_title"
+            android:key="motion.skin"
+            android:summary="@string/pref_motion_skin_summary"
+            android:title="@string/pref_motion_skin_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="battery.enable"
+            android:summary="@string/pref_battery_enable_summary"
+            android:title="@string/pref_battery_enable_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

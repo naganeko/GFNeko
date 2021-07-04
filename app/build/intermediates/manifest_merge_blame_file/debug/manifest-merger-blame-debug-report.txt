@@ -1,0 +1,131 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.grifon_kryuger.gfneko"
+4    android:versionCode="8"
+5    android:versionName="0.16.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+11-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:6:5-81
+11-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:6:22-78
+12    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+12-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:7:5-78
+12-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:7:22-75
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:8:5-9:40
+13-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:8:22-78
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:10:5-80
+14-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:10:22-77
+15    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+15-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:11:5-12:40
+15-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:11:22-79
+16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+16-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:13:5-77
+16-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:13:22-74
+17
+18    <application
+18-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:15:5-52:19
+19        android:name="androidx.multidex.MultiDexApplication"
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.7.0-alpha01] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/22802dacf04f55d4b2f1e49dd6e93e62/core-1.7.0-alpha01/AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@drawable/icon"
+22-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:16:9-38
+23        android:label="@string/app_name"
+23-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:17:9-41
+24        android:theme="@style/Theme.AppCompat.DayNight" >
+24-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:18:9-56
+25        <activity
+25-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:21:9-28:20
+26            android:name="com.grifon_kryuger.gfneko.GFNekoActivity"
+26-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:22:13-43
+27            android:label="@string/app_name" >
+27-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:23:13-45
+28            <intent-filter>
+28-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:24:13-27:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:25:17-69
+29-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:25:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:26:17-77
+31-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:26:27-74
+32            </intent-filter>
+33        </activity>
+34
+35        <receiver android:name="com.grifon_kryuger.gfneko.GFNekoReceiver" >
+35-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:30:9-38:20
+35-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:30:19-49
+36            <intent-filter>
+36-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:31:13-33:29
+37                <action android:name="android.intent.action.BOOT_COMPLETED" />
+37-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:32:17-79
+37-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:32:25-76
+38            </intent-filter>
+39            <intent-filter>
+39-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:34:13-37:29
+40                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+40-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:35:17-81
+40-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:35:25-78
+41
+42                <data android:scheme="package" />
+42-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:36:17-50
+42-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:36:23-47
+43            </intent-filter>
+44        </receiver>
+45
+46        <service android:name="com.grifon_kryuger.gfneko.AnimationService" />
+46-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:40:9-53
+46-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:40:18-50
+47
+48        <activity
+48-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:42:9-51:20
+49            android:name="com.grifon_kryuger.gfneko.NekoSkin"
+49-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:43:13-37
+50            android:label="@string/skin_name_neko" >
+50-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:44:13-51
+51            <intent-filter>
+51-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:45:13-47:29
+52                <action android:name="com.grifon_kryuger.gfneko.action.GET_SKIN" />
+52-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:46:17-84
+52-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:46:25-81
+53            </intent-filter>
+54
+55            <meta-data
+55-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:48:13-50:48
+56                android:name="com.grifon_kryuger.gfneko.skin"
+56-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:49:17-62
+57                android:resource="@xml/neko" />
+57-->/home/cuj1559/바탕화면/GFNeko-gradle/app/src/main/AndroidManifest.xml:50:17-45
+58        </activity>
+59
+60        <provider
+60-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:26:9-34:20
+61            android:name="androidx.startup.InitializationProvider"
+61-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:27:13-67
+62            android:authorities="com.grifon_kryuger.gfneko.androidx-startup"
+62-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:28:13-68
+63            android:exported="false" >
+63-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:29:13-37
+64            <meta-data
+64-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:31:13-33:52
+65                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+65-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:32:17-75
+66                android:value="androidx.startup" />
+66-->[androidx.emoji2:emoji2:1.0.0-alpha03] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/fdffb464ec282d415c574c9e7d045bdd/jetified-emoji2-1.0.0-alpha03/AndroidManifest.xml:33:17-49
+67            <meta-data
+67-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:31:13-33:52
+68                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:32:17-78
+69                android:value="androidx.startup" />
+69-->[androidx.lifecycle:lifecycle-process:2.4.0-alpha02] /home/cuj1559/바탕화면/girlsfrontline-resources-extract-android/gradle/caches/transforms-2/files-2.1/39223965578ae29fec17f7460a7d17dd/jetified-lifecycle-process-2.4.0-alpha02/AndroidManifest.xml:33:17-49
+70        </provider>
+71    </application>
+72
+73</manifest>
