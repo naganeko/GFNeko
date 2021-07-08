@@ -1,0 +1,36 @@
+com/grifon_kryuger/gfneko/BatteryInfo.java
+ com.grifon_kryuger.gfneko.BatteryInfo
+com/grifon_kryuger/gfneko/MotionParams.java
+ com.grifon_kryuger.gfneko.MotionParams
+ com.grifon_kryuger.gfneko.MotionParams$Motion
+ com.grifon_kryuger.gfneko.MotionParams$MoveDirection
+ com.grifon_kryuger.gfneko.MotionParams$WallDirection
+com/grifon_kryuger/gfneko/GFNekoReceiver.java
+ com.grifon_kryuger.gfneko.GFNekoReceiver
+com/grifon_kryuger/gfneko/MotionParams2.java
+ com.grifon_kryuger.gfneko.MotionParams2
+ com.grifon_kryuger.gfneko.MotionParams2$1
+com/grifon_kryuger/gfneko/BuildConfig.java
+ com.grifon_kryuger.gfneko.BuildConfig
+com/grifon_kryuger/gfneko/NekoSkin.java
+ com.grifon_kryuger.gfneko.NekoSkin
+com/grifon_kryuger/gfneko/MotionDrawable.java
+ com.grifon_kryuger.gfneko.MotionDrawable
+ com.grifon_kryuger.gfneko.MotionDrawable$1
+ com.grifon_kryuger.gfneko.MotionDrawable$ChildCallback
+ com.grifon_kryuger.gfneko.MotionDrawable$ChildOnMotionEnd
+ com.grifon_kryuger.gfneko.MotionDrawable$ItemInfo
+ com.grifon_kryuger.gfneko.MotionDrawable$MotionConstantState
+ com.grifon_kryuger.gfneko.MotionDrawable$OnMotionEndListener
+com/grifon_kryuger/gfneko/AnimationService.java
+ com.grifon_kryuger.gfneko.AnimationService
+ com.grifon_kryuger.gfneko.AnimationService$1
+ com.grifon_kryuger.gfneko.AnimationService$Behaviour
+ com.grifon_kryuger.gfneko.AnimationService$MotionEndListener
+ com.grifon_kryuger.gfneko.AnimationService$MotionState
+ com.grifon_kryuger.gfneko.AnimationService$PreferenceChangeListener
+ com.grifon_kryuger.gfneko.AnimationService$Receiver
+ com.grifon_kryuger.gfneko.AnimationService$TouchListener
+com/grifon_kryuger/gfneko/GFNekoActivity.java
+ com.grifon_kryuger.gfneko.GFNekoActivity
+ com.grifon_kryuger.gfneko.GFNekoActivity$SettingsFragment
